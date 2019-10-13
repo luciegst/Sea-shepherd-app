@@ -1,0 +1,19 @@
+<div [ngClass]="status ? 'na' : 'change-height'" class="na">
+  <div class="navbar-menu">
+    <div class="navlogo">
+      <img [routerLink]="['/']" src="assets/homepage/sea-shepherd-logo.png" alt="nouvelle_chance_logo" width="150" height="120">
+    </div>
+    <i (click)="showMenu()" class="fas fa-bars"></i>
+  </div>
+  <ul [ngClass]="status ? 'show-menu' : 'dont-show-menu'" class="responsive-elements">
+    <li class="navlink">
+      <a routerLink="/ourfleet">Our fleet</a>
+    </li> 
+    <li class="navlink">
+      <a routerLink="/ourproducts">Our products</a>
+    </li> 
+  </ul>
+  <div [ngClass]="status ? 'show-menu' : 'dont-show-menu'" class="navlink-button">
+      <button class="donate-button" type="submit" [routerLink]="['/card']"><i class="fas fa-shopping-cart"></i> Checkout ({{items.length}})</button>  
+  </div>
+</div>

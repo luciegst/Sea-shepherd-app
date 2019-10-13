@@ -1,0 +1,40 @@
+<h3 style="text-align: center; margin-top: 20px" *ngIf="items.length == 0">Your checkout is empty</h3>
+<h3 style="text-align: center; margin-top: 20px" *ngIf="items.length > 0">Checkout</h3>
+<div class="row" style="justify-content: center; margin: 0">
+  <table *ngIf="items.length > 0" class="table" style="width:60%">
+    <thead class="thead-dark">
+      <tr>
+        <th>Product</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+      <tr *ngFor="let item of items">
+        <td><img class="img-responsive" src={{item.productImg}} alt="sea-shepherd item" width="30%"></td>
+        <td>{{item.name}} <br> {{ item.type }}</td>
+        <td>{{item.price | currency:'USD':symbol}}</td>
+      </tr>
+  </table>
+</div>
+<div *ngIf="items.length > 0">
+  <div class="row" style="justify-content: center; margin: 0">
+    <h3 style="text-align: center; margin-top: 20px">Form</h3>
+  </div>
+  <div>
+    <form style="margin: 50px;" [formGroup]="checkoutForm" (ngSubmit)="clearCart()">
+      <div class="form-row">
+        <div class="form-group col-6">
+          <label for="name">Name</label>
+          <input type="text" formControlName="name" class="form-control" id="name" placeholder="Name">
+        </div>
+        <div class="form-group col-6">
+          <label for="address">Address</label>
+          <input type="text" class="form-control" id="address" formControlName="address" placeholder="Address">
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Purchase</button>
+    </form>
+  </div>
+</div>
+
+

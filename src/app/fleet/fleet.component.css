@@ -1,0 +1,20 @@
+.vessel-container{
+  border: 1px black solid;
+  margin-top: 15px;
+  padding-bottom: 15px;
+}
+
+.vessel-name{
+  margin-bottom: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.vessel-name:hover{
+  text-decoration: underline;
+}
+
+.vessel-informations{
+  list-style-type: none;
+  margin-top: 20px;
+}

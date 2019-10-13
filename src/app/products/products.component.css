@@ -1,0 +1,6 @@
+.products-column {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}

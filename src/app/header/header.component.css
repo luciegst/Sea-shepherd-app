@@ -1,0 +1,154 @@
+.na {
+  display: flex;
+  padding: 3px;
+  background-color: rgb(177, 187, 187);
+  height: 125px;
+}
+
+.responsive-elements {
+  display: flex;
+  padding: 3px;
+  background-color: rgb(177, 187, 187);
+  margin: 0;
+}
+
+.navlogo {
+  padding: 0;
+  cursor: pointer;
+}
+
+.navlink{
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  cursor: pointer;
+}
+
+.navlink:hover{
+  color: #000000;
+}
+
+.navlink-button{
+  margin-left: auto;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.navlink-toggle-button{
+  display: none;
+}
+
+a {
+  color: inherit;
+}
+
+.donate-button {
+  background-color: #00c09e;
+  border: #000000;
+  color: #ffffff;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.donate-button:hover{
+  background-color: #ffffff;
+  color: #00c09e;
+}
+
+i.fas.fa-bars{
+  visibility: hidden;
+}
+i.fas.fa-sort-down {
+  margin-left: 5px;
+}
+
+.navlink-toggle-button{
+  display: flex;
+  justify-content: end;
+  padding: 15px; 
+}
+
+.navbar-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* custom dropdown */
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-top: 150px;
+  cursor: pointer;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  color: #f2b250;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* end of custom dropdown */
+
+@media screen and (max-width: 1000px) {
+  .collapse {
+    visibility: hidden;
+  }
+  .na {
+    display: block;
+    height: 400px;
+  }
+  .success .responsive-elements {
+    display: block;
+  }
+  .danger .responsive-elements {
+    display: none;
+  }
+  i.fas.fa-bars{
+    font-size: 30px;
+    visibility: visible;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  .navlink-toggle-button{
+    display: flex;
+    justify-content: end;
+    padding: 15px; 
+  }
+  .show-menu {
+    display: block;
+  }
+  .dont-show-menu {
+    display: none;
+  }
+  .change-height {
+    height: 125px;
+  }
+}

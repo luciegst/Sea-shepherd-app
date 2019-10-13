@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 vessel-container" *ngFor="let vessel of vessels; index as vesselId">
+      <h3 class="vessel-name" [title]="vessel.name + ' details'" routerLink="/vessels/{{vessel.id}}">{{vessel.name}}</h3>
+      <img class="img-responsive" src={{vessel.vesselImg}} alt="sea-shepherd vessel photography" width="100%">
+      <ul class="vessel-informations">
+        <li><b>Vessel Type:</b> {{vessel.type}}</li>
+        <li><b>Country of Origin:</b> {{vessel.countryOfOrigin}}</li>
+        <li><b>Current Name:</b> {{vessel.currentName}}</li>
+      </ul>
+      <div style="padding-left: 40px"><i>Small Vessels:</i>
+        <ul>
+          <li><b>Zodiac:</b> {{vessel.smallVessel[0].zodiac}}</li>
+          <li *ngIf="vessel.smallVessel[0].helicopter"><b>Helicopter:</b> {{vessel.smallVessel[0].helicopter}}</li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-6" style="text-align: center">
+            <button class="btn btn-info" (click)="share()">Share this vessel</button>
+        </div>
+        <div class="col-6" style="text-align: center">
+            <app-vessel-alerts [vessel]="vessel" (notify)="onNotify()"></app-vessel-alerts>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+     
