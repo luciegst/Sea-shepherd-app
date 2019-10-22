@@ -32,6 +32,14 @@ export class HeaderComponent implements OnInit {
     this.status = !this.status
   }
 
+  sumQuantities(){
+    let sum = 0
+    this.items.forEach(element => {
+      sum += element.quantity
+    });
+    return sum;
+  }
+
   
 
 

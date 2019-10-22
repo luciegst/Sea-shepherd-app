@@ -14,6 +14,6 @@
     </li> 
   </ul>
   <div [ngClass]="status ? 'show-menu' : 'dont-show-menu'" class="navlink-button">
-      <button class="donate-button" type="submit" [routerLink]="['/card']"><i class="fas fa-shopping-cart"></i> Checkout ({{items.length}})</button>  
+      <button class="donate-button" type="submit" [routerLink]="['/card']"><i class="fas fa-shopping-cart"></i> Checkout ({{sumQuantities()}})</button>  
   </div>
 </div>

@@ -7,13 +7,29 @@
         <th>Product</th>
         <th>Description</th>
         <th>Price</th>
+        <th>Quantity</th>
       </tr>
     </thead>
-      <tr *ngFor="let item of items">
+    <tbody>
+      <tr *ngFor="let item of items; let i = index">
         <td><img class="img-responsive" src={{item.productImg}} alt="sea-shepherd item" width="30%"></td>
         <td>{{item.name}} <br> {{ item.type }}</td>
         <td>{{item.price | currency:'USD':symbol}}</td>
+        <td>{{item.quantity}} 
+        <br>
+        <button (click)="decrease(i)">-</button> 
+        <button (click)="increase(i)">+</button>
+        </td>
       </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="table-dark">Total</td>
+        <td class="table-dark"></td>
+        <td class="table-dark"></td>
+        <td class="table-dark">{{getTotal() | currency:'USD':symbol}}</td>
+      </tr>
+    </tfoot>
   </table>
 </div>
 <div *ngIf="items.length > 0">
@@ -36,5 +52,6 @@
     </form>
   </div>
 </div>
+
 
 

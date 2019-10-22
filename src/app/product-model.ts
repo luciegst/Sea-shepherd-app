@@ -3,5 +3,6 @@ export class ProductModel {
   name: string;
   type: string;
   price: number;
+  quantity: number;
   productImg: string;
 }
